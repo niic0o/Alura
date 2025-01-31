@@ -4,19 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Desafío</title>
 </head>
 <body>
     <header>
         <h1></h1>
     </header>
     <main class="container">
-        <button onclick="clickConsola();" class="button">Console</button>
-        <button onclick="clickAlert();" class="button">Alert</button>
-        <button onclick="clickPrompt();" class="button">Prompt</button>
-        <button onclick="clickSuma();" class="button">Suma</button>
+        <div>
+            <button onclick="clickConsola();" class="button" id="text">Console</button>
+            <button onclick="clickAlert();" class="button" id="text">Alert</button>
+            <button onclick="clickPrompt();" class="button" id="text">Prompt</button>
+            <button onclick="clickSaludo();" class="button" id="text">Saludo</button>
+            <button onclick="clickSaludame();" class="button" id="text">¡Saludame!</button>
+        </div>
+        <div>
+            <button onclick="clickSuma();" class="button" id="maths">Suma</button>
+            <button onclick="clickDuplicar();" class="button" id="maths">Duplicar</button>
+            <button onclick="clickPromedio();" class="button" id="maths">Promedio</button>
+            <button onclick="clickMayor();" class="button" id="maths">Mayor</button>
+            <button onclick="clickCuadrado();" class="button" id="maths">Cuadrado</button>
+        </div>
     </main>
-
       <script src="app.js"></script>
 </body>
 </html>

@@ -10,7 +10,7 @@ titulo.style.color = "#EEF334";
 
 let boton = document.querySelectorAll("button");
 boton.forEach((boton) => {
-  let colorOriginal = (boton.style.backgroundColor = "#43BCD3");
+  let colorOriginal = boton.style.backgroundColor;
   boton.addEventListener("mouseover", () => {
     boton.style.backgroundColor = "#EEF334";
   });
@@ -19,7 +19,7 @@ boton.forEach((boton) => {
   });
 });
 
-
+/* parte del desafio 1*/
 function clickConsola() {
   alert("El botón fue clickado");
 }
@@ -40,4 +40,57 @@ function clickSuma() {
   isNaN(suma)
     ? alert("Debe ingresar solo numeros")
     : alert(`La suma de ${num1} y ${num2} es ${suma}`);
+}
+
+/* parte del desafío 2*/
+function clickSaludo() {
+  let saludo = `"¡Hola, mundo!"`;
+  console.log(saludo);
+  alert(saludo);
+}
+
+function clickSaludame() {
+  let nombre = prompt("Ingresa tu nombre: ");
+  let saludo = `"!Hola, ${nombre}!"`;
+  console.log(saludo);
+  alert(saludo);
+}
+
+function clickDuplicar() {
+  let numero = parseInt(prompt("Ingrese un numero: "));
+  if (isNaN(numero)) {
+    alert("Debes ingresar un numero");
+  } else {
+    alert(`El numero es: ${numero * 2}`);
+  }
+}
+
+function clickPromedio() {
+  let num1 = parseInt(prompt("Ingresa un número: "));
+  let num2 = parseInt(prompt("Ingresa otro número: "));
+  let num3 = parseInt(prompt("Ingresa el último número"));
+  if (isNaN(num1) || isNaN(num2) || isNaN(num3)) {
+    alert("Por favor, ingrese sólo números");
+  } else {
+    alert(`El promedio es: ${(num1 + num2 + num3) / 3}`);
+  }
+}
+
+function clickMayor() {
+  let num1 = parseInt(prompt("Ingresa un número: "));
+  let num2 = parseInt(prompt("Ingresa otro número: "));
+  if (isNaN(num1) || isNaN(num2)) {
+    alert("Por favor, ingrese sólo números");
+  } else {
+    alert(`El número mayor es: ${Math.max(num1, num2)}`);
+  }
+}
+
+function clickCuadrado() {
+  let numero = parseInt(prompt("Ingresa un número: "));
+  if (isNaN(numero)) {
+    alert("Debes ingresar un número");
+  } else {
+    alert(`El cuadrado es: ${numero * numero}`);
+  }
 }
