@@ -4,9 +4,27 @@ extraerlo en una nueva variable para guardar su propiedad. Luego realizar la acc
 Cuando suceda la accion opuesta recargar con la propiedad que tenia
 */
 
-let titulo = document.querySelector("h1");
-titulo.innerHTML = "Hora del Desafío";
-titulo.style.color = "#EEF334";
+/**
+ * @param {string} p_selector recibe la etiqueta HTML
+ * @param {string} p_texto recibe el texto para unir al selector
+ */
+function addTextToSelector(p_selector, p_texto) {
+  try {
+    let selector = document.querySelector(p_selector);
+    selector.innerHTML = p_texto;
+    if (selector.style.color === "rgb(238, 243, 52)") {
+      selector.style.color = "rgb(148, 253, 36)";
+    } else if (selector.style.color === "rgb(148, 253, 36)") {
+      selector.style.color = "rgb(96, 246, 221)";
+    } else {
+      selector.style.color = "rgb(238, 243, 52)";
+    }
+  } catch (error) {
+    console.error("Error al agregar texto a selector: ", error);
+  }
+}
+
+addTextToSelector("h1", "¡Elige una función!");
 
 let boton = document.querySelectorAll("button");
 boton.forEach((boton) => {
@@ -34,12 +52,16 @@ function clickAlert() {
 }
 
 function clickSuma() {
-  let num1 = parseInt(prompt("Ingresa un numero: "));
-  let num2 = parseInt(prompt("Ingresa otro numero: "));
+  let num1 = parseFloat(prompt("Ingresa un numero: ").replace(",", "."));
+  let num2 = parseFloat(prompt("Ingresa otro numero: ").replace(",", "."));
   let suma = num1 + num2;
-  isNaN(suma)
-    ? alert("Debe ingresar solo numeros")
-    : alert(`La suma de ${num1} y ${num2} es ${suma}`);
+  if (isNaN(suma)) {
+    alert("Debe ingresar solo numeros");
+  } else {
+    alert(`La suma de ${num1} y ${num2} es ${suma}`);
+    addTextToSelector("h1", "¡Bien hecho, prueba otra función!");
+    addTextToSelector("h3", "Sigue apretando botones para cambiar los colores");
+  }
 }
 
 /* parte del desafío 2*/
@@ -51,46 +73,197 @@ function clickSaludo() {
 
 function clickSaludame() {
   let nombre = prompt("Ingresa tu nombre: ");
+  if (nombre === null) {
+    nombre = "Sin Nombre ¬¬";
+  }
   let saludo = `"!Hola, ${nombre}!"`;
   console.log(saludo);
   alert(saludo);
+  addTextToSelector("h1", `Presiona los botones verdes ${nombre}!`);
 }
 
 function clickDuplicar() {
-  let numero = parseInt(prompt("Ingrese un numero: "));
+  let numero = prompt("Ingrese un número: ").replace(",", ".");
   if (isNaN(numero)) {
     alert("Debes ingresar un numero");
   } else {
     alert(`El numero es: ${numero * 2}`);
+    addTextToSelector("h1", "¡Bien hecho, prueba otra función!");
+    addTextToSelector("h3", "Sigue apretando botones para cambiar los colores");
   }
 }
 
 function clickPromedio() {
-  let num1 = parseInt(prompt("Ingresa un número: "));
-  let num2 = parseInt(prompt("Ingresa otro número: "));
-  let num3 = parseInt(prompt("Ingresa el último número"));
+  let num1 = parseFloat(prompt("Ingresa un número: ").replace(",", "."));
+  let num2 = parseFloat(prompt("Ingresa otro número: ").replace(",", "."));
+  let num3 = parseFloat(prompt("Ingresa el último número").replace(",", "."));
   if (isNaN(num1) || isNaN(num2) || isNaN(num3)) {
     alert("Por favor, ingrese sólo números");
   } else {
     alert(`El promedio es: ${(num1 + num2 + num3) / 3}`);
+    addTextToSelector("h1", "¡Bien hecho, prueba otra función!");
+    addTextToSelector("h3", "Prueba los botones verdes -.-");
   }
 }
 
 function clickMayor() {
-  let num1 = parseInt(prompt("Ingresa un número: "));
-  let num2 = parseInt(prompt("Ingresa otro número: "));
+  let num1 = parseFloat(prompt("Ingresa un número: ").replace(",", "."));
+  let num2 = parseFloat(prompt("Ingresa otro número: ").replace(",", "."));
   if (isNaN(num1) || isNaN(num2)) {
     alert("Por favor, ingrese sólo números");
   } else {
     alert(`El número mayor es: ${Math.max(num1, num2)}`);
+    addTextToSelector("h1", "¡Bien hecho, prueba otra función!");
+    addTextToSelector("h3", "Otra mas, otra mas");
   }
 }
 
 function clickCuadrado() {
-  let numero = parseInt(prompt("Ingresa un número: "));
+  let numero = parseFloat(prompt("Ingresa un número: ").replace(",", "."));
   if (isNaN(numero)) {
     alert("Debes ingresar un número");
   } else {
     alert(`El cuadrado es: ${numero * numero}`);
+    addTextToSelector("h1", "¡Bien hecho, prueba otra función!");
+    addTextToSelector("h3", "Excelente :)");
+  }
+}
+
+/* Funciones del desafío 3*/
+/*
+<button onclick="clickDolar();" class="button" id="f_maths">Dolar (31-ene-25)</button>
+<button onclick="clickArea_R();" class="button" id="f_maths">Área del Rectángulo</button>
+<button onclick="clickArea_C();" class="button" id="f_maths">Área del Círculo</button>
+<button onclick="clickTabla();" class="button" id="f_maths">Tabla de Multiplicar</button>
+ */
+
+/**
+ *
+ */
+function calculaIMC(p_peso, p_altura) {
+  return p_peso / (p_altura * p_altura);
+}
+
+function clasificaIMC(p_imc) {
+  let doc = "Debes visitar a un doctor";
+  switch (true) {
+    case p_imc <= 18.5:
+      return `bajo peso. ${doc}`;
+    case p_imc > 18.5 && p_imc <= 24.9:
+      return `peso normal.`;
+    case p_imc > 24.9 && p_imc <= 29.9:
+      return `sobrepeso ${doc}`;
+    case p_imc > 29.9 && p_imc <= 34.9:
+      return `obesidad grado 1. ${doc}`;
+    case p_imc > 34.9 && p_imc <= 39.9:
+      return `obesidad grado 2. ${doc}`;
+    case p_imc > 39.9:
+      return `obesidad grado 3. ${doc}`;
+    default:
+      break;
+  }
+}
+
+function calculaFactorial(p_n) {
+  let factorial = 1; //por definición de función factorial
+  for (let i = 1; i <= p_n; i++) {
+    factorial *= i;
+  }
+  return factorial;
+}
+
+function convertirADolar(p_peso) {
+  return p_peso * 0.00095;
+}
+
+function calculaArea_R(p_base, p_altura) {
+  return p_base * p_altura;
+}
+
+function calculaPerímetro_R(p_base, p_altura) {
+  return 2 * (p_base + p_altura);
+}
+
+function calculaArea_C(p_radio) {
+  return 3.14 * (p_radio * p_radio);
+}
+
+function calculaPerímetro_C(p_radio) {
+  return 2 * 3.14 * p_radio;
+}
+
+function clickIMC() {
+  let peso = parseFloat(
+    prompt("Ingresa tu peso en kg: (ejemplo: 80.500) ").replace(",", ".")
+  );
+  let altura = parseFloat(
+    prompt("Ingresa tu altura en metros, (ejemplo: 1.80): ").replace(",", ".")
+  );
+  if (isNaN(peso) || isNaN(altura)) {
+    alert("Por favor, ingresa los valores solicitados");
+  } else {
+    let imc = calculaIMC(peso, altura);
+    alert(`Tu IMC es: ${imc}. Tienes ${clasificaIMC(imc)}`);
+    addTextToSelector("h1", "¡Excelente, prueba otra función!");
+    addTextToSelector("h3", "Prueba todas las funciones :)");
+  }
+}
+
+function clickFactorial() {
+  let n = parseInt(prompt("Ingresa un número para calcular su factorial: "));
+  if (isNaN(n)) {
+    alert("Por favor, ingresa un número natural");
+  } else {
+    alert(`El factorial del numero ${n} es ${calculaFactorial(n)}`);
+    addTextToSelector("h1", "¡Excelente, prueba otra función!");
+    addTextToSelector("h3", "Más despacio Stirling, no te vayas al infinito");
+  }
+}
+
+function clickDolar() {
+  let pesos = parseFloat(
+    prompt(
+      "Ingresa la cantidad de pesos (ARS) que deseas convertir: (ejemplo: 500.45)"
+    )
+  );
+  if (isNaN(pesos)) {
+    alert("Por favor, ingresa un valor numérico");
+  } else {
+    alert(
+      `Ingresaste ${pesos}. Dolares que recibes: ${convertirADolar(pesos)}`
+    );
+    addTextToSelector("h1", "¡Excelente, prueba otra función!");
+    addTextToSelector("h3", "Precio del dolar al día 31/01/2025");
+  }
+}
+
+function clickArea_R() {
+  let base = parseFloat(
+    prompt("Ingresa la anchura en metros de tu pared: (ejemplo: 1.50)")
+  );
+  let altura = parseFloat(prompt("Ingresa la altura: (ejemplo: 2.50)"));
+  if (isNaN(base) || isNaN(altura)) {
+    alert("Por favor, ingresa los valores solicitados");
+  } else {
+    alert(
+      `El área de tu pared es: ${calculaArea_R(
+        base,
+        altura
+      )} y el perímetro es: ${calculaPerímetro_R(base, altura)}`
+    );
+    addTextToSelector("h1", "¡Bien ahí arquitecto!");
+    addTextToSelector("h3", "Ahora prueba el círculo");
+  }
+}
+function clickArea_C() {
+  let radio = parseFloat(
+    prompt("Ingresa el radio de tu círculo: (ejemplo: 2.1)")
+  );
+  if (isNaN(radio)) {
+    alert("Por favor, ingresa un valor numérico");
+  } else {
+    alert(`El área de tu círculo es: ${calculaArea_C(radio)}`);
+    addTextToSelector("h1", "¡Excelente, prueba otra función!");
+    addTextToSelector("h3", "Sigamos, sigamos");
   }
 }

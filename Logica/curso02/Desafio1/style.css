@@ -33,6 +33,10 @@ main, html {
   background-color: rgb(203, 103, 36);
 }
 
+.button#f_maths{
+  background-color:#2ecc71;
+}
+
 .button:hover {
   background-color: #2980b9;
 }
