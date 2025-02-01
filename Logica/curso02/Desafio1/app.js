@@ -24,6 +24,11 @@ function addTextToSelector(p_selector, p_texto) {
   }
 }
 
+function colorTabla(){
+  let tab = document.getElementById("tabla");
+  tab.style.color = 'rgb(250, 153, 101)';  
+}
+
 addTextToSelector("h1", "¡Elige una función!");
 
 let boton = document.querySelectorAll("button");
@@ -36,33 +41,6 @@ boton.forEach((boton) => {
     boton.style.backgroundColor = colorOriginal;
   });
 });
-
-/* parte del desafio 1*/
-function clickConsola() {
-  alert("El botón fue clickado");
-}
-
-function clickPrompt() {
-  let ciudad = prompt("Escribe una ciudad de Brasil: ");
-  alert(`Estuve en ${ciudad} y me acordé de ti`);
-}
-
-function clickAlert() {
-  alert("Yo amo JS");
-}
-
-function clickSuma() {
-  let num1 = parseFloat(prompt("Ingresa un numero: ").replace(",", "."));
-  let num2 = parseFloat(prompt("Ingresa otro numero: ").replace(",", "."));
-  let suma = num1 + num2;
-  if (isNaN(suma)) {
-    alert("Debe ingresar solo numeros");
-  } else {
-    alert(`La suma de ${num1} y ${num2} es ${suma}`);
-    addTextToSelector("h1", "¡Bien hecho, prueba otra función!");
-    addTextToSelector("h3", "Sigue apretando botones para cambiar los colores");
-  }
-}
 
 /* parte del desafío 2*/
 function clickSaludo() {
@@ -129,17 +107,7 @@ function clickCuadrado() {
   }
 }
 
-/* Funciones del desafío 3*/
-/*
-<button onclick="clickDolar();" class="button" id="f_maths">Dolar (31-ene-25)</button>
-<button onclick="clickArea_R();" class="button" id="f_maths">Área del Rectángulo</button>
-<button onclick="clickArea_C();" class="button" id="f_maths">Área del Círculo</button>
-<button onclick="clickTabla();" class="button" id="f_maths">Tabla de Multiplicar</button>
- */
-
-/**
- *
- */
+/* Parte del desafío 3 */
 function calculaIMC(p_peso, p_altura) {
   return p_peso / (p_altura * p_altura);
 }
@@ -191,6 +159,14 @@ function calculaArea_C(p_radio) {
 function calculaPerímetro_C(p_radio) {
   return 2 * 3.14 * p_radio;
 }
+
+function calcularTabla(p_multiplicando){
+  let resultado = '';
+   for(i=0; i<=10; i++){
+     resultado += ` ${p_multiplicando} x ${i} = ${i*p_multiplicando} <br>`   
+   };
+   return resultado;
+ }
 
 function clickIMC() {
   let peso = parseFloat(
@@ -267,3 +243,44 @@ function clickArea_C() {
     addTextToSelector("h3", "Sigamos, sigamos");
   }
 }
+
+function clickTabla() {
+  let tabla = document.getElementById("tabla");
+  let multiplicando = parseInt(prompt('Ingrese un numero entero entre 0 y 10: '));
+  if(isNaN(multiplicando) || multiplicando < 0 || multiplicando > 10){
+    alert('Debes ingresar un numero entero entre 0 y 10');
+  }else{
+      tabla.innerHTML = calcularTabla(multiplicando);
+      addTextToSelector("h1", `¡Excelente, prueba otra función!`);
+      addTextToSelector("h3", "Intenta con otro número");
+      colorTabla();
+  }
+}
+/* parte del desafio 1*/
+function clickConsola() {
+  alert("El botón fue clickado");
+}
+
+function clickPrompt() {
+  let ciudad = prompt("Escribe una ciudad de Brasil: ");
+  alert(`Estuve en ${ciudad} y me acordé de ti`);
+}
+
+function clickAlert() {
+  alert("Yo amo JavaScript, (pero también Java :p)");
+}
+
+function clickSuma() {
+  let num1 = parseFloat(prompt("Ingresa un numero: ").replace(",", "."));
+  let num2 = parseFloat(prompt("Ingresa otro numero: ").replace(",", "."));
+  let suma = num1 + num2;
+  if (isNaN(suma)) {
+    alert("Debe ingresar solo numeros");
+  } else {
+    alert(`La suma de ${num1} y ${num2} es ${suma}`);
+    addTextToSelector("h1", "¡Bien hecho, prueba otra función!");
+    addTextToSelector("h3", "Sigue apretando botones para cambiar los colores");
+  }
+}
+
+

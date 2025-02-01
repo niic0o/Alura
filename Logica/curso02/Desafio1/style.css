@@ -7,10 +7,9 @@ header {
 main, html {
   margin: 0;
   padding: 0;
-  height: 50%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start; /* Cambiar a flex-start para que el contenido comience desde la parte superior */
   background-color: #0C356A;
 }
 
@@ -40,3 +39,5 @@ main, html {
 .button:hover {
   background-color: #2980b9;
 }
+
+
