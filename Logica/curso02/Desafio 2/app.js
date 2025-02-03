@@ -140,3 +140,28 @@ function clickBuscar() {
     addTextToSelector("h3", "Presiona 'Promedio'");
   }
 }
+
+function calculaFactorial(p_n) {
+  let arreglo = [];
+  let factorial = 1; //por definición de función factorial
+  for (let i = 1; i <= p_n; i++) {
+    arreglo.push(i);
+    factorial *= i;
+  }
+  if(arreglo.length === 0){
+    addTextToSelector("h3", "Por definición el factorial del numero 0 es 1");
+  }else{
+  addTextToSelector("h3", `Para calcular el factorial se multiplica en esta secuencia ${arreglo}`);
+  }
+  return factorial;
+}
+
+function clickFactorial() {
+  let n = parseInt(prompt("Ingresa un número para calcular su factorial: "));
+  if (isNaN(n) || n > 30) {
+    alert("Por favor, ingresa un número natural menor que 30");
+  } else {
+    alert(`El factorial del numero ${n} es ${calculaFactorial(n)}`);
+    addTextToSelector("h1", "¡Excelente, prueba otra función!");
+  }
+}
