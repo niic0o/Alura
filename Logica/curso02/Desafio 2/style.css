@@ -10,7 +10,7 @@ main, html {
   display: flex;
   justify-content: center;
   align-items: flex-start; /* Cambiar a flex-start para que el contenido comience desde la parte superior */
-  background-color: #0C356A;
+  background-color: #1e0c52;
 }
 
 .container {
