@@ -1,8 +1,30 @@
 img {
-  width: 193.64px;
-  height: 273.35px;
-  margin-left: 0px;
+  width: 300px;
+  height: 300px;
+  margin-left: 50px;
   margin-top: 0px;
   transform: rotate(0rad) translateZ(0px);
   -webkit-transform: rotate(0rad) translateZ(0px);
+}
+h1,h2,p{
+  color: white;
+  font-size: 175%;
+}
+
+html{
+  background-image: url("./assets/ruido.jpg");
+}
+
+/* Colores para los links */
+a:link {
+  color: #d096f7;
+}
+a:visited {
+  color: #d97f7f;
+}
+a:hover {
+  color: #52e5f8;
+}
+a:active {
+  color: #b3ff00;
 }

@@ -1,18 +1,79 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Proyecto Café Aroma</title>
-        <link rel="stylesheet" href="style.css"></link>
-    </head>
-    <body background="assets/ruido.jpg">
-        <h1>Café Aroma. Descubriendo el stack MERN</h1>
-        <p>El stack MERN <span>MongoDB, Express.js, React y Node.js</span> es lo que define a este proyecto.
-        Pero no es solamente eso. El diseño arquitectónico utilizado tiene una representación mucho mas compleja
-    que la simple mención de un cuarteto de tecnologías súper conocidas</p>
-    <h2>Microservicios y Modelo de Capas</h2>
-    <p>Un poco de ambos. Escalabilidad. Seguridad. Rendimiento. Son los 3 requisitos no funcionales de los cuales nos aferramos para elegir
-        la mencionada arquitectura. Con Microservicios agregamos el toque de escalabilidad al cóctel
-    </p>
-        <img src="assets/image1.png" alt="Logo de CSS">
-    </body>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" /><!--Mayor representacion de caracteres-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!--compatibilidad con dispositivos-->
+    <meta
+      name="description"
+      content="Descubre el proyecto Café Aroma, donde exploramos el stack MERN con una arquitectura escalable y segura basada en microservicios y modelo de capas."
+    /><!--Aparecera en los resultados de las busquedas-->
+    <meta name="robots" content="index, follow" /><!--Permite que google indexe tu pagina-->
+    <title>Proyecto Café Aroma - Explorando el stack MERN</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Open Graph para redes sociales para visualizar parte del contenido -->
+    <meta property="og:title" content="Proyecto Café Aroma - Stack MERN" />
+    <meta
+      property="og:description"
+      content="Exploramos MongoDB, Express.js, React y Node.js en una arquitectura basada en microservicios y modelo de capas."
+    />
+    <meta property="og:image" content="https://tusitio.com/assets/image1.png" />
+    <meta property="og:url" content="https://tusitio.com/cafe-aroma" />
+
+    <!-- Canonical para evitar que indexe paginas duplicadas -->
+    <link rel="canonical" href="https://tusitio.com/cafe-aroma" />
+  </head>
+  <body>
+    <header>
+      <h1>Proyecto Café Aroma: Descubriendo el stack MERN</h1>
+    </header>
+
+    <main>
+      <section>
+        <h2>¿Qué es el stack MERN?</h2>
+        <p>
+          El stack
+          <strong>MERN (MongoDB, Express.js, React y Node.js)</strong> es la
+          base de este proyecto. Sin embargo, no se trata solo de tecnología,
+          sino de una arquitectura bien pensada para escalabilidad, seguridad y
+          rendimiento.
+        </p>
+      </section>
+
+      <section>
+        <h2>Microservicios y Modelo de Capas</h2>
+        <p>
+          Hemos elegido una arquitectura híbrida, aprovechando las ventajas de
+          los microservicios para escalabilidad e integración con
+          <strong>Mercado Pago</strong>. Para la seguridad, utilizamos
+          <strong>JWT (JSON Web Token)</strong> y <strong>bcrypt</strong> para
+          el hash de contraseñas con 10 saltos.
+        </p>
+      </section>
+
+      <section>
+        <h2>Gestión de Datos con MongoDB</h2>
+        <p>
+          Para la base de datos, utilizamos <strong>MongoDB</strong>, un motor
+          NoSQL que nos permite gestionar datos de manera eficiente y escalable.
+        </p>
+        <img
+          src="assets/mongoDB.png"
+          alt="MongoDB, base de datos NoSQL utilizada en el proyecto"
+        />
+      </section>
+    </main>
+    <aside>
+        <h2>¿Quieres saber más?</h2>
+        <p>¡Puedes visitar la página!:
+            <a href="https://cafe-aroma-sand.vercel.app/" alt="Página oficial de Café Aroma">
+                <strong>cafe-aroma-sand.vercel.app</strong>
+                </a>
+        </p>
+    </aside>
+    <footer>
+      <p>&copy; 2025 Café Aroma - Todos los derechos reservados.</p>
+    </footer>
+  </body>
 </html>
