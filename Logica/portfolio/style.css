@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
+
+body{
+    background-color: indigo;
+    color: white;
+    font-family: 'Krona One', sans-serif;
+}
+h1 strong{
+    color: #22D4FD;
+}
+
+main{
+    background-color: black;
+    width: 50%;
+    height: 100vh;
+    margin: auto;
+    border-style: ridge;
+    border-radius: 2%;
+}
+
+p{
+    font-family: 'Montserrat', sans-serif;
+}
+
+a{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600; /*semiBold*/
+}
+
+button{
+    background-color: #22D4FD;
+    width: 280;
+    height: 79;
+    padding: 16,16;
+}
