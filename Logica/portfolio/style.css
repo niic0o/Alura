@@ -1,3 +1,11 @@
+/*
+Tecnicas BEM para escritura de codigo escalable y limpio
+
+B - Bloque (Componente independiente y reutilizable). Ej: <div class="box">
+E - Elemento (Parte del bloque, no tiene sentido por sí solo). Ej: <h1 class="box__title">
+M - Modificador (Variante de un bloque o elemento). Ej: <h1 class="box__title--strong">
+*/
+
 @import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
 
 body{
@@ -5,11 +13,11 @@ body{
     color: white;
     font-family: 'Krona One', sans-serif;
 }
-h1 strong{
+.main__strong{
     color: #22D4FD;
 }
 
-main{
+.main{
     background-color: black;
     width: 50%;
     height: 100vh;
@@ -18,18 +26,31 @@ main{
     border-radius: 2%;
 }
 
-p{
+.main .main__text{
     font-family: 'Montserrat', sans-serif;
 }
 
-a{
+.button__link{
     font-family: 'Montserrat', sans-serif;
     font-weight: 600; /*semiBold*/
+    font-size: larger;
 }
 
-button{
+.button{
     background-color: #22D4FD;
-    width: 280;
-    height: 79;
-    padding: 16,16;
+    width: 120px;
+    height: 50px;
+    padding: 10px 10px;
+}
+
+.main__text--soyAna {
+    color:coral;
+}
+
+.main__img{
+    width: 50%;
+    height: auto;
+}
+.main__img--ana{
+    border-radius: 25%;
 }
