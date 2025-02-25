@@ -28,6 +28,7 @@ body{
 
 .main .main__text{
     font-family: 'Montserrat', sans-serif;
+    padding: 20px;
 }
 
 .button__link{
