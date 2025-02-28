@@ -8,6 +8,10 @@ M - Modificador (Variante de un bloque o elemento). Ej: <h1 class="box__title--s
 
 @import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
 
+*{
+    box-sizing: border-box;
+}
+
 body{
     background-color: indigo;
     color: white;
@@ -18,6 +22,7 @@ body{
 }
 
 .main{
+    box-sizing: content-box;
     background-color: black;
     width: 50%;
     height: 100vh;
@@ -26,7 +31,7 @@ body{
     border-radius: 2%;
 }
 
-.main .main__text{
+.main__text{
     font-family: 'Montserrat', sans-serif;
     padding: 20px;
 }
@@ -34,13 +39,12 @@ body{
 .button__link{
     font-family: 'Montserrat', sans-serif;
     font-weight: 600; /*semiBold*/
-    font-size: larger;
+    
 }
 
 .button{
     background-color: #22D4FD;
-    width: 120px;
-    height: 50px;
+    width: 100px;
     padding: 10px 10px;
 }
 
@@ -48,10 +52,7 @@ body{
     color:coral;
 }
 
-.main__img{
-    width: 50%;
-    height: auto;
-}
 .main__img--ana{
     border-radius: 25%;
+    width: 40%;
 }
