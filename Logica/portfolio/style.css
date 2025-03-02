@@ -38,25 +38,26 @@ body{
 
 .main__content {
     flex: 1;
+    width: 30vw;
     max-width: 50vw;
-    text-align: left;
+    text-align: justify;
     margin: 30px 30px;
 }
 
 .main__title{
-    font-size: 24px;
+    font-size: 20px;
 }
 .main__text{
     font-family: 'Montserrat', sans-serif;
-    padding: 10px;
-    font-size: 18px;
+    font-size: 14px;
     margin-bottom: 1rem;
 }
 
 .main__buttons {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    justify-self: center;
+    justify-content: center;
     gap: 1rem;
 }
 
@@ -84,10 +85,13 @@ body{
 
 .main__image-container {
     flex: 1;
-    max-width: 40vw;
-    min-width: 30vw;
+    width: 30vw;
+    max-width: 30vw;
+    flex-wrap: wrap;
+    min-width: 20vw;
     display: flex;
     justify-content: center;
+    margin: 30px 90px;
 }
 
 .section__box{
