@@ -6,7 +6,7 @@ E - Elemento (Parte del bloque, no tiene sentido por sí solo). Ej: <h1 class="b
 M - Modificador (Variante de un bloque o elemento). Ej: <h1 class="box__title--strong">
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 *{
     box-sizing: border-box;
@@ -57,7 +57,7 @@ body{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
+    justify-content:space-between;
     gap: 1rem;
 }
 
@@ -65,13 +65,17 @@ body{
     font-family: 'Montserrat', sans-serif;
     font-weight: 600; /*semiBold*/
     font-size: 15px;
+    display: flex;
 }
 
 .button{
     background-color: #22D4FD;
     border: none;
-    padding: 0.8rem 1.2rem;
+    border-radius: 16px;
+    padding: 1.2rem 2.5rem;
     cursor: pointer;
+    flex: 1;
+    justify-items: center;
 }
 
 .main__text--soyAna {
@@ -84,7 +88,7 @@ body{
 }
 
 .main__image-container {
-    flex: 1;
+    
     width: 30vw;
     max-width: 30vw;
     flex-wrap: wrap;
