@@ -166,15 +166,15 @@ body {
 }
 
 .button__icon.github {
-  background-image: url("assets/github.png");
+  background-image: url("../assets/github.png");
 }
 
 .button__icon.linkedin {
-  background-image: url("assets/linkedin.png");
+  background-image: url("../assets/linkedin.png");
 }
 
 .button__icon.twitch {
-  background-image: url("assets/twitch.png");
+  background-image: url("../assets/twitch.png");
 }
 
 .footer {
