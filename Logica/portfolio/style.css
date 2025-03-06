@@ -33,6 +33,7 @@ body{
     background-color: black;
     border-style: ridge;
     border-radius: 2%;
+    padding-bottom: 2rem; /*agrega espacio por debajo entre border y content*/
 }
 
 .main__content {
@@ -45,8 +46,9 @@ body{
     min-height: 70px;
     text-align: justify;
     align-content: center;
-    margin: 90px 30px 0; /*der_izq px | arriba px | abajo*/
+    margin: 90px 30px 0px; /*der_izq px | arriba px | abajo*/
     box-sizing: border-box;
+    
 }
 
 .main__title{
@@ -126,7 +128,6 @@ body{
     flex-wrap: wrap;
     display: flex;
     justify-content: center;
-    margin: 10px 60px;
 }
 
 .section__box{
@@ -147,4 +148,24 @@ text-align: center;
 
  .button__icon.github{
     background-image: url('assets/github.png');
- } 
+ }
+ 
+ .button__icon.linkedin{
+    background-image: url('assets/linkedin.png');
+ }
+
+ .button__icon.twitch{
+    background-image: url('assets/twitch.png');
+ }
+
+ .footer{
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    background-color: #22D4FD;
+    color:black;
+ }
