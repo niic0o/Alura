@@ -107,7 +107,9 @@ body {
   text-decoration: none;
   color: white;
 }
-
+.button__link:hover{
+  color: #22d4fd;
+}
 .button {
   border-color: #22d4fd;
   background-color: transparent;
@@ -136,6 +138,13 @@ body {
 .main__img--ana {
   width: 100%;
   height: 100%;
+  object-fit: contain;
+}
+
+.main__img--nico{
+  width: 100%;
+  height: 100%;
+  border: 2px solid #22d4fd;
   object-fit: contain;
 }
 
